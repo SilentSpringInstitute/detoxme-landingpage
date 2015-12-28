@@ -1,0 +1,596 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+  color: white;
+  font-size: 1em;
+  line-height: 1.4;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto;
+  background: rgb(41, 98, 255);
+  font-family: sans-serif;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+a {
+  outline: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*
+ * For desktop, page, header, footer are set to 650px
+ * and centered on the page.
+ *
+ * In general, style directives are ordered by positioning,
+ * padding/margins, then color and text styling
+ */
+
+/**************
+ * Page setup *
+ **************/
+
+/* Main wrapper around all content */
+#wrapper {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+
+
+/**********
+ * Header *
+ **********/
+
+#header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 75px;
+  z-index: 5;
+
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#header .content {
+  position: relative;
+  width: 650px;
+  margin: auto;
+  padding-top: 10px;
+}
+
+/* Social media (Facebook, Twitter) buttons
+ * are put on the right side of the header
+ */
+#header .social-media {
+  position: absolute;
+  right: 0px;
+  top: 23px;
+}
+
+#header .social-media a {
+  text-decoration: none;
+}
+
+
+/**********
+ * Footer *
+ **********/
+
+/* Right now the footer just contains the
+ * Silent Spring logo
+ */
+#footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 5;
+  width: 100%;
+  padding-bottom: 15px;
+
+  text-align: center;
+}
+
+/*****************
+ * Fixed content *
+ * ***************/
+
+/* The fixed content consists of phone outline image,
+ * left/right buttons, download images, etc.
+ *
+ * It is setup as an absolutely positioned div that
+ * covers the whole document, with elements absolutely
+ * positioned inside.
+ *
+ * By default, elements ignore click events (all
+ * click events get passed through to the underlying 
+ * elements using the 'pointer-events' directive I
+ * learned about)
+ */
+
+#fixed-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  pointer-events: none; /* Because the static content sits on top of the real content,
+                           we want all click events to pass through. Exceptions are for
+                           the left/right arrows and the little circle buttons on mobile,
+                           which have their own individual overrides. */
+}
+
+#fixed-content {
+  position: relative;
+  width: 650px;
+  margin: auto;
+}
+
+#fixed-content .menu {
+  display: none; /* On desktop, don't show the circular slide buttons */
+}
+
+#fixed-content img {
+  margin-top: 125px;
+}
+
+#fixed-content .controls {
+  position: absolute;
+  left: 77px;
+  top: 475px;
+  z-index: 10;
+}
+
+#fixed-content .controls a {
+  text-decoration: none;
+  pointer-events: all; /* Override the fact that the fixed-wrapper ignores click events */
+}
+
+#fixed-content .controls a:first-child {
+  margin-right: 30px;
+}
+
+/* These are the 'download on the app/play store' images */
+#fixed-content .store-badges {
+  position: absolute;
+  width: 300px;
+  top: 465px;
+  right: 25px;
+
+  pointer-events: all; /* Override the fact that the fixed-wrapper ignores click events */
+} 
+
+#fixed-content .store-badges a {
+  text-decoration: none;
+}
+
+#fixed-content .store-badges a:nth-child(1) {
+  margin-right: 10px;
+}
+
+
+
+/**********
+ * Slides *
+ **********/
+
+/* A 'slide' is one screen of content
+ * User can swipe to get to adjacent slides */
+
+#fullpage .section .slide .content {
+  width: 650px;
+  margin: auto;
+  position: relative;
+}
+
+#fullpage .section .slide .body {
+  position: absolute;
+  width: 350px;
+  top: 140px;
+  right: 0px;
+}
+
+#fullpage .section .slide .body h2 {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#fullpage .section .slide .body p:first-of-type {
+  margin-top: 0px;
+}
+
+/* These are the app screenshots that fit into the phone outline */
+#fullpage .section .slide .image {
+  position: absolute;
+  width: 300px;
+  top: 164px;
+  left: 12px;
+}
+
+/* This is the 'DetoxMe' logo that is on the first slide */
+#fullpage .section .slide:nth-child(1) .logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#fullpage .section .slide:nth-child(1) .body {
+  top: 117px; /* Adjust positioning of the body text on the first slide */
+}
+
+.fp-tableCell {
+  vertical-align: top; /* By default fullPage.js vertically centers slide content */
+}
+
+/**********
+ * Badges *
+ **********/
+
+.badges {
+  position: absolute;
+  top: 258px;
+  z-index: 10;
+}
+
+.badges .badge {
+  width: 80px;
+  float: left; /* Line up the badges horizontally */
+  min-height: 144px;
+  margin-right: 10px;
+  padding: 10px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+
+  text-align: center;
+}
+
+.badges .badge > div {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Sprite generated using instantsprite.com */
+.sprite { background: url('/detoxme/img/badges-sprite.png') no-repeat top left; width: 80px; height: 80px;  } 
+.sprite.Badge-Climber { background-position: 0 0; } 
+.sprite.Badge-Low-Chem-Living { background-position: 0 -80px; } 
+.sprite.Badge-Teacher-Coach { background-position: 0 -160px; } 
+.sprite.Badge-Brainiac { background-position: 0 -240px; } 
+.sprite.Badge-DIY-Master { background-position: 0 -320px; } 
+.sprite.Badge-Right-Path { background-position: 0 -400px; } 
+.sprite.Badge-Change-Maker { background-position: 0 -480px; } 
+.sprite.Badge-Healthy-Home { background-position: 0 -560px; } 
+.sprite.Badge-Healthy-Industry { background-position: 0 -640px; } 
+.sprite.Badge-Clean-Body { background-position: 0 -720px; } 
+.sprite.Badge-Clean-House { background-position: 0 -800px; } 
+.sprite.Badge-Healthy-Food { background-position: 0 -880px; } 
+.sprite.badge-body { background-position: 0 -960px; } 
+.sprite.badge-clean-house { background-position: 0 -1040px; } 
+.sprite.badge-climber { background-position: 0 -1120px; } 
+
+
+/****************
+ * Slide colors *
+ ****************/
+
+#fullpage .section .slide:nth-child(1) {
+  background: rgb(41, 98, 255);
+}
+
+#fullpage .section .slide:nth-child(2) {
+  background: rgb(255, 82, 82);
+}
+
+#fullpage .section .slide:nth-child(3) {
+  background: rgb(22, 175, 137);
+}
+
+#fullpage .section .slide:nth-child(4) {
+  background: rgb(255, 147, 29);
+}
+
+#fullpage .section .slide:nth-child(5) {
+  background: rgb(22, 175, 137);
+}
+
+#fullpage .section .slide:nth-child(6) {
+  background: rgb(161, 189, 65);
+}
+
+
+/**************
+ * About page *
+ **************/
+
+.main-content {
+  width: 650px;
+  margin: 150px auto 200px auto;
+}
+
+.main-content a {
+  color: white;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 660px) {
+  /* Don't hide vertical overflow */
+  .fp-slide {
+    display: block;
+    padding-bottom: 30px;
+  }
+
+  .fp-tableCell {
+    display: block;
+  }
+
+  /* Hide the larger DetoxMe logo */
+  .logo {
+    display: none;
+  }
+
+  /* Hide all the badges */
+  .badges {
+    display: none;
+  }
+
+  /* Adjust the header to fit the available width */
+  #header .content {
+    width: 100%;
+  }
+
+  #header .content a {
+    padding-left: 10px;
+  }
+
+  #header .content .social-media {
+    right: 10px;
+  }
+
+  /* Show the circular menu */
+  #fixed-content .menu {
+    position: relative;
+    display: block;
+    top: -5px;
+    padding-left: 0px;
+    z-index: 100;
+  }
+
+  #fixed-content .menu li {
+    display: inline-block;
+  }
+
+  #fixed-content .menu li a {
+    display: block;
+    width: 7px;
+    height: 7px;
+
+    color: white;
+    text-decoration: none;
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+
+  #fixed-content .menu li.active a {
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 2px;
+  }
+
+  /* Adjust the main content view */
+  #fullpage .section .slide .content {
+    width: auto;
+    margin: auto;
+    position: relative;
+  }
+
+  /* Move the app screenshot to the center */
+  #fullpage .section .slide .image {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    left: 0px;
+    top: 125px;
+  }
+
+  /* Resize of the app screenshots */
+  #fullpage .section .slide .image img {
+    width: 126px;
+    height: 222px;
+  }
+
+  /* Move the text to below the image */
+  #fullpage .section .slide .body {
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding-top: 270px;
+  }
+
+  #fullpage .section .slide .body p {
+    padding: 0px 20px;
+  }
+
+  #fullpage .section .slide:nth-child(1) .body {
+    padding-top: 270px;
+  }
+
+  /*****************
+   * Fixed content *
+   *****************/
+
+  /* Adjust the fixed content (phone outline, left/right buttons, etc) */
+  #fixed-content {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Adjust the phone outline */
+  #fixed-content > img {
+    margin-top: 100px;
+    width: 140px;
+  }
+
+  /* Adjust the 'Download on the app/play store' badges */
+  #fixed-content .store-badges {
+    position: relative;
+    top: -125px;
+    right: 0px;
+    width: 100%;
+
+    text-align: center;
+  }
+
+  #fixed-content .store-badges:nth-child(1) {
+    margin-right: 0px;
+  }
+
+  #fixed-content .store-badges:nth-child(2) {
+    margin-left: 0px;
+  }
+
+  #fixed-content .controls {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100%;
+  }
+
+  #fixed-content .controls a img {
+    /* Add some padding around the image so that the link
+     * is easier to tap on mobile */
+    padding: 25px;
+  }
+
+  #fixed-content .controls a:first-child {
+    margin-right: 200px;
+  }
+
+
+  /* About Page */
+  .main-content {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  #fixed-content .controls {
+    padding-left: 0px;
+  }
+
+  /* Squeeze in the left/right buttons */
+  #fixed-content .controls a:first-child {
+    margin-right: 150px;
+  }
+
+  #footer img {
+    width: 80%;
+  }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
