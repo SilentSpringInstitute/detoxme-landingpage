@@ -98,8 +98,33 @@ video {
 
 #header .social-media a {
   text-decoration: none;
+  color: white;
 }
 
+/* Position the 'About' link in the header */
+#header .social-media a:first-child {
+  position: relative;
+  top: 2px;
+  margin-right: 10px;
+}
+
+/*********
+ * Quote *
+ *********/
+
+#quote {
+  position: absolute;
+  top: 115px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  font-size: 25px;
+}
+
+#quote a {
+  color: white;
+  text-decoration: none;
+}
 
 /**********
  * Footer *
@@ -146,6 +171,7 @@ video {
                            we want all click events to pass through. Exceptions are for
                            the left/right arrows and the little circle buttons on mobile,
                            which have their own individual overrides. */
+  padding-top: 125px;
 }
 
 #fixed-content {
@@ -180,11 +206,9 @@ video {
 
 /* These are the 'download on the app/play store' images */
 #fixed-content .store-badges {
-  position: absolute;
+  position: relative;
   width: 300px;
-  top: 465px;
-  right: 25px;
-
+  left: 300px;
   pointer-events: all; /* Override the fact that the fixed-wrapper ignores click events */
 } 
 
@@ -205,6 +229,10 @@ video {
 /* A 'slide' is one screen of content
  * User can swipe to get to adjacent slides */
 
+#fullpage {
+  padding-top: 125px;
+}
+
 #fullpage .section .slide .content {
   width: 650px;
   margin: auto;
@@ -216,6 +244,8 @@ video {
   width: 350px;
   top: 140px;
   right: 0px;
+  padding-bottom: 200px;
+  min-height: 222px;
 }
 
 #fullpage .section .slide .body h2 {
@@ -256,7 +286,7 @@ video {
 
 .badges {
   position: absolute;
-  top: 258px;
+  bottom: 0px;
   z-index: 10;
 }
 
@@ -338,6 +368,19 @@ video {
 
 .main-content a {
   color: white;
+}
+
+.about h2 {
+  margin-top: 40px;
+}
+
+.main-content .logo {
+  background: white;
+  border-radius: 100px;
+  padding: 10px;
+  display: inline-block;
+  margin-right: 10px;
+  height: 50px;
 }
 
 /* ==========================================================================

@@ -39,6 +39,24 @@ $(document).ready(function() {
     }
   });
 
+  // Position the store buttons
+  
+  // Get the height of all the slides to see where the
+  // store badges should be positioned
+  var largestHeight = 0;
+  $.each($(".body"), function() {
+    var height = $(this).height();
+    if(height > largestHeight) largestHeight = height;
+  });
+
+  var currentTop = $(".store-badges").position().top;
+  var targetTop = largestHeight < 500 ? -100 : (largestHeight - currentTop + 55);
+
+  console.log(largestHeight, currentTop, targetTop);
+
+  $(".store-badges").css('top', targetTop + 'px');
+
+
   var slideHeight = $(document).height();
   if(slideHeight < 720) {
     slideHeight = 720;
